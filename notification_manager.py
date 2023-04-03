@@ -7,8 +7,12 @@ API_KEY = os.environ['TWILIO_API_KEY']
 TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']
 TWILIO_TOKEN = os.environ['TWILIO_AUTH_TOKEN']
 
-MY_EMAIL = "sobakacast@gmail.com"
-PASSWORD = "vdtrpwbkqmcypvcv"
+# Here used to be hardcoded credentials of my secondary email account, and it was a great lesson
+# why environmental variables should be used for sensitive data and credentials.
+# About an hour after I pushed this file to my open GitHub repo, somebody started
+# sending out spam from this account, so I had to immediately change the password.
+MY_EMAIL = os.environ['NOTIFICATION_EMAIL_ADDRESS']
+PASSWORD = os.environ['NOTIFICATION_EMAIL_PASSWORD']
 
 TWILIO_PHONE_NUMBER = '+15075807312'
 RECIPIENT_PHONE_NUMBER = '+48791533936'
